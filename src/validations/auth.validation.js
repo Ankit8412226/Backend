@@ -7,9 +7,7 @@ const register = {
     password: Joi.string().required().custom(password),
     name: Joi.string().required(),
     mobile: Joi.string().required().custom(mobile),
-    role_id: Joi.number().required(),
-    organization: Joi.string(),
-    
+
   }),
 };
 
