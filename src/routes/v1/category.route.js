@@ -3,6 +3,8 @@ const categoryController = require('../../controllers/category.controller');
 
 const router = express.Router();
 
+router.post('/seed', categoryController.seedCategories);
+
 router
   .route('/')
   .post(categoryController.createCategory)

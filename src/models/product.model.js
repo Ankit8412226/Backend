@@ -32,6 +32,9 @@ const productSchema = new mongoose.Schema(
     hoverImage: {
       type: String,
     },
+    description:{
+      type: String,
+    }
   },
   { timestamps: true }
 );

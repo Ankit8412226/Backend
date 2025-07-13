@@ -3,6 +3,8 @@ const { productController } = require('../../controllers');
 
 const router = express.Router();
 
+router.post('/seed', productController.seedProducts);
+
 router
   .route('/')
   .post(productController.createProduct)

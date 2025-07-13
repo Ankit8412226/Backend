@@ -17,6 +17,32 @@ const createCategory = catchAsync(async (req, res) => {
   res.status(httpStatus.CREATED).send({ category });
 });
 
+const seedCategories = catchAsync(async (req, res) => {
+  const defaultCategories = [
+    { name: "Men's Clothing" },
+    { name: "Women's Clothing" },
+    { name: "Footwear" },
+    { name: "Accessories" },
+    { name: "Ethnic & Traditional Wear" },
+  ];
+
+  const inserted = [];
+
+  for (const categoryData of defaultCategories) {
+    const exists = await Category.findOne({ name: categoryData.name });
+    if (!exists) {
+      const newCategory = await Category.create(categoryData);
+      inserted.push(newCategory);
+    }
+  }
+
+  res.status(httpStatus.CREATED).send({
+    message: 'Default categories seeded successfully',
+    inserted,
+  });
+});
+
+
 
 const getAllCategories = catchAsync(async (req, res) => {
   const categories = await Category.find().sort({ createdAt: -1 });
@@ -76,4 +102,5 @@ module.exports = {
   updateCategory,
   deleteCategory,
   deleteAllCategories,
+  seedCategories
 };
