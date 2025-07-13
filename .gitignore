@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Yarn lockfile (keep only one lock strategy)
+package-lock.json
+
+# Yarn error logs
+yarn-error.log*
+
+# Environment variables (hide all .env files but allow .env.example)
+.env
+.env.*
+!.env.example
+!.env*.example
+
+# Build output (common for frontend or transpiled backends)
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Code coverage
+coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: Jest test
